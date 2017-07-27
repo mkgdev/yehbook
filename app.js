@@ -26,7 +26,7 @@ var DBURL = process.env.url;
 
 if(!DBURL)
     {
-        DBURL= "mongodb://localhost/go_camp";
+        DBURL= "mongodb://localhost/startup_final" ;
     }
 
  mongoose.connect(DBURL);
@@ -190,7 +190,7 @@ app.use(contactRoutes);
 
 
 
-app.listen(process.env.IP,process.env.PORT, function(){
+app.listen(process.env.IP||3000,process.env.PORT, function(){
   
   console.log("SERVER IS STARTED");
 
