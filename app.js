@@ -190,7 +190,7 @@ app.use(contactRoutes);
 
 
 
-app.listen(process.env.IP||3000,process.env.PORT, function(){
+app.listen(process.env.IP,process.env.PORT, function(){
   
   console.log("SERVER IS STARTED");
 
