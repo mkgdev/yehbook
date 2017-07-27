@@ -22,8 +22,21 @@ var contactRoutes = require('./routes/contact.js');
 
 
 //--------------------------------------------------------------------------------------------------------------------------
-mongoose.connect("mongodb://localhost/startup_final");  // connecting with DB and creatind a DB(yeh_BOok) in mongodb
+var DBURL = process.env.url;
+
+if(!DBURL)
+    {
+        DBURL= "mongodb://localhost/go_camp";
+    }
+
+ mongoose.connect(DBURL);
+
+//-------------------------------------
+
+
+
 app.use(bodyParser.urlencoded({extended:true}));
+
 app.set("view engine", "ejs"); 
 
 
@@ -177,7 +190,7 @@ app.use(contactRoutes);
 
 
 
-app.listen(3000, function(){
+app.listen(process.env.IP||3000,process.env.PORT, function(){
   
   console.log("SERVER IS STARTED");
 

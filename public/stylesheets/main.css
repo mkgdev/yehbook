@@ -315,3 +315,9 @@ position: absolute;
     border : 0.1px solid  #d4d1d1;
 }
 
+.request-btn {
+    background: transparent;
+    box-shadow: 1px 0px 1px #d43f3a;
+    text-shadow: 2px 1px 10px black;
+}
+

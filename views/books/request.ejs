@@ -1,0 +1,57 @@
+<% include  ../partials/header %>
+
+<div class="container">
+    <div class="row">
+<h1 style="text-align: center;"> Request Book </h1>
+        <div style="width: 30%; margin: 30px auto;">
+<form action="/books/request" method = "POST">
+    
+                        <div class="form-group">
+                              
+                                <input class="form-control" type = "text" name = "book[name]" placeholder="Book Name" > 
+                        </div>
+
+                        <div class="form-group">
+                   
+                                <input class="form-control" type = "text" name = "book[writer]" placeholder="Author"> 
+                        </div>
+    
+                       <div class="form-group">
+                        <p>Condition</p>
+                        <label class="radio-inline">
+                      <input type="radio" name="book[condition]" id="inlineRadio1" value="New"> New
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="book[condition]" id="inlineRadio2" value="Second Hand"> Second hand
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="book[condition]" id="inlineRadio3" value="Any"> Any of both
+                    </label>
+ 
+                      </div>
+                        
+                      
+  
+                        <div class="form-group">
+                            <p>Any other info?</p>
+                               <textarea class="form-control" type="text" name = "book[info]" > </textarea>
+
+
+                        </div>
+  
+  
+
+                        <div class="form-group">
+                                <button class="btn btn-default btn-lg showcase-btn btn-block"> Request! </button>
+                        </div>
+ 
+     
+ </form>
+  <a href="/books">Go back</a>
+       </div>
+    </div>
+</div>
+
+
+
+<% include  ../partials/footer %>

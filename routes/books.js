@@ -1,10 +1,67 @@
 var express    = require("express");
 var router     = express.Router();
 var Book       = require("../models/book");
+var RequestBook = require("../models/request");
 var middleware = require("../middleware");  // similar to var middleware = require("../middleware/index.js");  "it will take index.js file itself"
 
-var bookCondition ='All'
+var bookCondition ='All';
 
+
+//=========================================================
+//  Request Routes
+//========================================================
+
+router.get('/request/new', function(req,res)
+{
+
+ res.render('../views/books/request');
+
+
+}
+          
+          
+          
+);
+
+router.get('/request', function(req, res)
+{
+    console.log('hello');
+
+res.render('../views/books/request_show');
+
+}
+          
+);
+
+router.post('/request', function(req,res)
+{
+
+console.log('book', req.body.book);
+    
+    RequestBook.create(req.body.book, function(err,request)
+                      
+    {
+    
+    if(err)
+        {
+            return console.log(err);
+        }
+        
+        console.log('request submitted : ', request);
+        
+        res.redirect('/books/request');
+    
+    }
+                      
+    );
+    
+
+
+}           
+           
+);
+
+//------------------------------------------------------------
 
 router.post('/condition', function(req, res)  //Getting the value of Cateogries from Radios buttons
 {
@@ -168,5 +225,7 @@ router.delete("/:id", middleware.checkBookOwnership, function(req, res){
 
   });
 });
+
+
 
 module.exports  =  router;
