@@ -1,0 +1,317 @@
+html {
+    height: 100%;
+}
+
+body{	
+	margin-top: 100px;
+	font-size: 16px;
+    opacity: 0;
+    height: 100%;
+}
+
+
+.show-landing
+{
+	margin-top: 100px;
+}
+
+
+
+
+.tag-line{
+	font-family: Poppins;
+	font-size: 50px;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: Poppins;
+}
+
+
+
+p{
+	font-family: Roboto;
+}
+
+
+
+.thumbnail-show img 
+{
+	width: 100%;
+}
+
+.thumbnail-show, .thumbnail-book 
+{
+	padding: 0%;
+}
+
+
+.thumbnail-show  .caption-full {
+	padding: 9px;
+}
+
+.navbar-default
+{
+	background:   #fff;
+    border:       0;
+    font-family:  Poppins;
+
+}
+
+.navbar-brand
+{
+    font-size:     20px;
+    color:         #000   !importanat;
+    font-weight:   bold;
+    
+
+}
+
+
+#showcase img
+{
+	width: 70%;
+	margin-left: 60px;
+}
+
+
+#testimonial
+{
+  
+  background: #f1f1f1;
+  padding:    50px 0 30px 0;
+  text-align: center;
+  margin-top: 100px; 
+
+}
+
+
+
+#testimonial p
+{
+
+	font-size:   32px;
+	font-family: 'josefin Sans';
+	color:        #000;
+}
+
+#testimonial p.customer
+{
+	font-size: 20px;
+	color:     #666;
+}
+
+
+
+
+#info1 .info-right 
+{
+	margin-top: 90px; 
+}
+
+#info1 .info-left 
+{
+	margin-top: 90px; 
+}
+
+
+
+
+
+section#contact {
+    background-color: #222222;
+    background-image: url('http://artdnaswitchbd.com/componants/images/map-image.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+section {
+    padding: 30px 0PX;
+}
+section#contact .section-heading {
+    color: white;
+}
+section#contact .form-group {
+    margin-bottom: 25px;
+}
+section#contact .form-group input,
+section#contact .form-group textarea {
+    padding: 20px;
+}
+section#contact .form-group input.form-control {
+    height: auto;
+}
+section#contact .form-group textarea.form-control {
+    height: 236px;
+}
+section#contact .form-control:focus {
+    border-color: #fed136;
+    box-shadow: none;
+}
+section#contact ::-webkit-input-placeholder {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #eeeeee;
+}
+.gellary_bg_none img{
+	width: 100%;
+	height: 250px;
+}
+section#contact :-moz-placeholder {
+    /* Firefox 18- */
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #eeeeee;
+}
+section#contact ::-moz-placeholder {
+    /* Firefox 19+ */
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #eeeeee;
+}
+section#contact :-ms-input-placeholder {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #eeeeee;
+}
+section#contact .text-danger {
+    color: #e74c3c;
+}
+
+.about_our_company{
+    text-align: center;
+}
+.about_our_company h1{
+    font-size: 25px;
+}
+.titleline-icon {
+    position: relative;
+    max-width: 100px;
+    border-top: 4px double #F99700;
+    margin: 20px auto 20px;
+}
+.titleline-icon:after {
+    position: absolute;
+    top: -11px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-family: 'FontAwesome';
+    content: "\f141";
+    font-size: 20px;
+    line-height: 1;
+    color: #F99700;
+    text-align: center;
+    vertical-align: middle;
+    width: 40px;
+    height: 20px;
+    background: #ffffff;
+}
+
+
+
+
+#img1
+{
+    width: 10%;
+    margin-top: 40px;
+    
+}
+
+
+
+#img2
+{
+    width: 70%;
+    margin-top: 70px;
+    margin-left: 60px;
+}
+
+#delete-form
+{
+    display: inline;
+}
+
+
+
+.book-div{
+
+
+    width: 100%;
+    height: 91%;
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(../assets/books.jpeg);
+    background-position: center;
+    background-size: cover;
+    margin-top:-46px;
+    
+   
+
+}
+
+.container-book{
+    
+    position: relative;
+    height: 100%;
+}
+
+
+.jumbotron-book{
+    
+
+position: absolute;
+    text-align: center;
+    background-color: transparent;
+     color: #F5F2F7;
+    top:25%;
+    margin: 0 auto;
+    
+    
+}
+
+.jumbotron-book>p{
+    text-shadow: 3px 3px 15px black;
+
+}
+.jumbotron-book>p span{
+    display: inline-block;
+    padding-left:500px;
+}
+
+.jumbotron-book .caption {
+    
+    
+    text-shadow: 2px 1px 10px black;
+}
+
+
+
+.book-container {
+    
+    margin-top:28px;
+}
+
+.thumbnail-book {
+    border: none;
+   margin-top: 5%;
+    margin-bottom: 0px;
+    text-align: center;
+ 
+    
+}
+
+.thumbnail-book .caption {
+    
+    word-wrap: break-word;
+}
+
+
+
+.book-divider{
+    
+    width: 100%;
+    border : 0.1px solid  #d4d1d1;
+}
+
