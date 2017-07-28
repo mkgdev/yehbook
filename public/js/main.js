@@ -290,26 +290,70 @@ $.when($('[name="optionsRadios"]').on('change', function()
 
 //----------------------------------------------------------------------------------------------
 
+//Changing book-div height according to shrink
 
- if($(this).width()<=615)
+ if($(this).width()<=513)
         {
+            $('.book-div').css({
+                
+                paddingTop: '66.6%'
+            });
      $('.jumbotron-book').css({
          bottom: '-13%'
      });
         }
+else if($(this).width()<=630 && $(this).width()>=514) {
+            
+              $('.jumbotron-book').css({
+         bottom: '11%',
+
+     });
+                 $('.book-div').css({
+                
+                paddingTop: '66.6%'
+            });
+            
+        }
+
+
 $(window).resize(function()
  {
-    if($(this).width()<=615)
+    if($(this).width()<=513)
         {
+             $('.book-div').css({
+                
+                paddingTop: '66.6%'
+            });
      $('.jumbotron-book').css({
-         bottom: '-13%'
+         bottom: '-13%',
+
      });
-        } else{
+        }else if($(this).width()<=630 && $(this).width()>=514) {
+            
+              $('.jumbotron-book').css({
+                bottom: '11%',
+
+     });
+                 $('.book-div').css({
+                
+                paddingTop: '66.6%'
+            });
+            
+        }
+
+            else{
+             $('.book-div').css({
+                
+                paddingTop: '42.6%'
+            });
+            
              $('.jumbotron-book').css({
          bottom: '11%'
      });
         }
 });
+
+//------------------------------------------------------------
 
 //animate window
 
