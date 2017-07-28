@@ -140,7 +140,7 @@ function resizeImage()
     );
 
 
-     console.log(imgmaxht);
+     
 
       $('.thumbnail-book img').height(imgmaxht+imgmaxht*0.3);
     
@@ -290,6 +290,26 @@ $.when($('[name="optionsRadios"]').on('change', function()
 
 //----------------------------------------------------------------------------------------------
 
+
+ if($(this).width()<=615)
+        {
+     $('.jumbotron-book').css({
+         bottom: '-13%'
+     });
+        }
+$(window).resize(function()
+ {
+    if($(this).width()<=615)
+        {
+     $('.jumbotron-book').css({
+         bottom: '-13%'
+     });
+        } else{
+             $('.jumbotron-book').css({
+         bottom: '11%'
+     });
+        }
+});
 
 //animate window
 
