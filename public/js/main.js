@@ -142,7 +142,7 @@ function resizeImage()
 
      
 
-      $('.thumbnail-book img').height(imgmaxht+imgmaxht*0.3);
+      $('.thumbnail-book img').height(imgmaxht-imgmaxht*0.2);
     
     
     
