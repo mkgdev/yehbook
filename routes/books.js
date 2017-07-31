@@ -126,6 +126,11 @@ router.post("/", middleware.isLoggedIn, function(req, res){
        var condition   = req.body.condition;
        var desc        = req.body.description;
        var price       = req.body.price;
+       var format      = req.body.format;
+       var pages       = req.body.pages;
+       var publisher   = req.body.publisher;
+       var language    = req.body.language;
+       var edition     = req.body.edition;
        var author = {
         id: req.user._id,
         username: req.user.username

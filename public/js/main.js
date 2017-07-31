@@ -358,7 +358,7 @@ $(window).resize(function()
 //Slide toggle show page
 
 
-$('.plus-details').on('click', function(){
+$('.book-details').on('click', function(){
     
     
     $('.plus-details').toggleClass('hower');
