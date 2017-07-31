@@ -355,6 +355,30 @@ $(window).resize(function()
 
 //------------------------------------------------------------
 
+//Slide toggle show page
+
+
+$('.plus-details').on('click', function(){
+    
+    
+    $('.plus-details').toggleClass('hower');
+    
+    $('.product-details-row').slideToggle(500,function()
+{
+
+    $('.product-details-row').animate({display:'block'},100);
+
+}
+                        
+);
+    
+    
+    
+});
+
+
+
+//--------------------------------------------------------------
 //animate window
 
 $(window).on('load', function()

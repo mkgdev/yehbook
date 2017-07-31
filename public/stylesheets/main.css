@@ -9,7 +9,9 @@ body{
     height: 100%;
 }
 
-
+.container-show {
+    height: 100%;
+}
 .show-landing
 {
 	
@@ -32,12 +34,44 @@ h1,h2,h3,h4,h5,h6{
 p{
 	font-family: Roboto;
 }
+.container-show{
+    margin-top:80px;
+}
 
+.row-show{
+    height: 60%;
+}
+
+.col-showimg{
+    height: 100%;
+
+}
+.col-showdesc {
+    height: 100%;
+    
+}
+.col-showdetails{
+    height: 100%;
+}
+.product-details-row{
+    
+    display: none;
+}
+
+
+
+.thumbnail-show {
+    
+    height: 100%;
+    width: 100%
+
+}
 
 
 .thumbnail-show img 
 {
 	width: 100%;
+    height: 100%;
 }
 
 .thumbnail-show, .thumbnail-book 
@@ -320,4 +354,11 @@ div#contact .text-danger {
     box-shadow: 1px 0px 1px #d43f3a;
     text-shadow: 2px 1px 10px black;
 }
+
+
+.hower{
+    
+    color: steelblue !important;
+}
+
 

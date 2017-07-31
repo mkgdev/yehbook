@@ -6,7 +6,14 @@ var bookSchema = new mongoose.Schema({
     image:         String,
     condition  :   String,
     description:   String,
-  
+    price      :   Number,
+    edition     :   String,
+    publisher   :   String,
+    pages   :       String,
+    language    :   String,
+    format      :   String,  // paperback etc
+    
+    
     
     author: {
     id:     {

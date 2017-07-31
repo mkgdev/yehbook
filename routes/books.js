@@ -125,6 +125,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
        var image       = req.body.image;
        var condition   = req.body.condition;
        var desc        = req.body.description;
+       var price       = req.body.price;
        var author = {
         id: req.user._id,
         username: req.user.username
@@ -138,7 +139,13 @@ router.post("/", middleware.isLoggedIn, function(req, res){
                          image       : image,
                          condition   : condition,
                          description : desc,
-                        author        : author
+                        author        : author,
+                        price         : price,
+                        format         : format,
+                        language        : language,
+                        publisher       : publisher,
+                        edition         : edition,
+                        pages           : pages
                   }                              
     
        //create a new Book_detail and save it to DB
