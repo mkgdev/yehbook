@@ -1,0 +1,38 @@
+ <% include  ../partials/header %>
+
+<div class="container">
+    <div class="row">
+<h1 style="text-align: center;"> Enter Your Details </h1>
+        <div style="width: 30%; margin: 30px auto;">
+ <form  class="buydetails-form">
+                        <div class="form-group">
+                              
+                                <input class="form-control" type = "text" name = "buy[shipping]" placeholder ="Shipping Address"> 
+                        </div>
+
+                        <div class="form-group">
+                   
+                                <input class="form-control" type = "text" name = "buy[pincode]" placeholder ="Pincode"> 
+                        </div>
+
+                        <div class="form-group">
+                                <input class="form-control" type = "text" name = "buy[city]" placeholder = "City">
+                        </div>
+                      
+                        <div class="form-group">
+                                <input style="width: 50%; display:inline-block;" class="form-control" type = "text" name = "buy[phone_no]" placeholder = "Mobile no"> <span><a href="#" class="btn btn-danger verify-otp">Verify OTP</a></span>
+                        </div>
+   
+     
+                        <div class="form-group">
+                                 <button class="btn btn-default btn-lg showcase-btn btn-block submit-buy" > Submit! </button>
+                        </div>
+ 
+     
+ </form>
+   <a href="/books/<%= book._id %>">Go back</a>
+       </div>
+    </div>
+</div>
+
+ <% include  ../partials/footer %>

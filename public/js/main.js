@@ -379,6 +379,66 @@ $('.book-details').on('click', function(){
 
 
 //--------------------------------------------------------------
+
+//=============================================================
+//     OTP VERIFICATION
+//===============================================================
+$('.verify-otp').on('click', function()
+
+{
+    var url = window.location.pathname;
+     url = url.split('/');
+    
+    
+var mobile_no =$('[name="buy[phone_no]"]').val();
+    
+$.post('/books/'+url[2]+'/buy/otp',{mobile_no : mobile_no} ,function(){
+    
+              
+                    
+});
+    if($('.verify-otp').text()==='Verify OTP')
+    {
+          $('.verify-otp').text('Resend OTP');
+  
+
+    $('.submit-buy').before('<div class="form-group"><input class="form-control" type = "text" name = "buy[otp]" placeholder = "OTP"></div>');  
+    }
+   
+     
+    
+      
+  
+
+
+}                   
+
+
+);
+
+
+
+$('.submit-buy').on('click', function()
+{
+    
+    var url = window.location.pathname;
+     url = url.split('/');
+    var data = {
+        shipping : $('[name="buy[shipping]"]').val(),
+        pincode : $('[name="buy[pincode]"]').val(),
+        city : $('[name="buy[city]"]').val(),
+        phone_no: $('[name="buy[phone_no]"]').val(),
+        otp: $('[name="buy[otp]"]').val(),
+
+        
+    }
+ $.post('/books/'+url[2]+'/buy/otp/verify',{data}, function(){});
+
+}                                     
+);
+
+//-------------------------------------------------------------
+
 //animate window
 
 $(window).on('load', function()

@@ -2,6 +2,7 @@ var express = require("express");
 var router  = express.Router();
 var passport= require("passport");
 var User    = require("../models/user");
+var client     = require('twilio')('ACa51208a494fa6858d2aa458e6393d2bd','3c79701ca13405a3cff0dadba4d4e48c');
 
 
 //landing page
@@ -9,6 +10,10 @@ router.get("/",function(req, res){
 
  res.render("landing");
 });
+
+
+
+
 
 //================
 //   AUTH ROUTES

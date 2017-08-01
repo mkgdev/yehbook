@@ -1,5 +1,6 @@
 var express    = require("express");
 var router     = express.Router();
+var client     = require('twilio')('ACa51208a494fa6858d2aa458e6393d2bd','3c79701ca13405a3cff0dadba4d4e48c');
 var Book       = require("../models/book");
 var RequestBook = require("../models/request");
 var middleware = require("../middleware");  // similar to var middleware = require("../middleware/index.js");  "it will take index.js file itself"
@@ -78,6 +79,93 @@ router.post('/condition', function(req, res)  //Getting the value of Cateogries 
            
            
 );
+
+
+//===================================================
+// SMS verfication
+//===================================================
+ var  randomOTP;
+router.post('/:id/buy/otp', function(req, res)
+{
+    console.log('yes');
+
+    var mobile_no = req.body.mobile_no;
+    console.log(req.body);
+
+client.messages.create({
+    
+     body: '11122',
+    to: mobile_no,  // Text this number
+    from: '+18564153674' // From a valid Twilio number
+}).then((message)=> {console.log(message.body)});
+
+}
+          
+);
+
+router.post('/:id/buy/otp/verify', function(req, res)
+{
+
+  var data = req.body.data;
+    console.log(req.body.data.otp);
+    
+    if(req.body.data.otp ==='11122')
+        {
+            console.log('otp');
+            Book.findById(req.params.id, function(err, book)
+                          {
+                         if(err){
+                           return console.log(err);
+                            }
+                          
+                          res.render('../views/books/buyconfirm',{book:book, data: data});
+                         
+            } );
+            
+        }
+
+
+}                     
+);
+
+
+
+
+
+
+//-------------------------------------------------------------------
+
+//==========================================================
+//  Book buy Routes
+//=========================================================
+
+router.get('/:id/buy', middleware.isLoggedIn, function(req,res)
+{
+
+res.render('../views/books/buyform', {book: Book});
+
+
+}
+   
+);
+
+
+router.post('/:id/buy', middleware.isLoggedIn, function(req,res)
+{
+
+  console.log(req.body.buy);
+
+
+
+}
+);
+
+
+
+
+//----------------------------------------------------------
+
+
 
 //INDEX-ROUTE  where we can se all books 
 router.get("/", function(req, res){

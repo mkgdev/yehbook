@@ -1,0 +1,68 @@
+<% include  ../partials/header %>
+
+
+<div class="container">
+    <div class="row">
+<h1 style="text-align: center;"> Confirm details </h1>
+        <div style="width: 30%; margin: 30px auto;">
+ <form action="/books/<%= book._id %>/buy" method = "POST" class="buydetails-form">
+                        
+                         <div class="form-group">
+                              
+                                <input class="form-control" type = "text" name = "buy[name]" value = "<%= book.name %>"> 
+                        </div>
+     
+     
+     
+                        <div class="form-group">
+                              
+                                 <input class="form-control" type = "text" name = "buy[shipping]" value = "<%= data.shipping %>"> 
+                        </div>
+
+                        <div class="form-group">
+                   
+                                 <input class="form-control" type = "text" name = "buy[pincode]" value = "<%= data.pincode %>"> 
+                        </div>
+
+                        <div class="form-group">
+                                 <input class="form-control" type = "text" name = "buy[city]" value = "<%= data.city %>"> 
+                        </div>
+     
+                        <div class="form-group">
+                                 <input class="form-control" type = "text" name = "buy[price]" value = "<%= book.price %>"> 
+                        </div>
+     
+                        <div class="form-group">
+                                 <input class="form-control" type = "text" name = "buy[phone_no]" value = "<%= data.phone_no %>"> 
+                        </div>
+       
+     
+                        <div class="form-group">
+                                 <button class="btn btn-default btn-lg showcase-btn btn-block submit-buy"> Confirm! </button>
+                        </div>
+ 
+     
+ </form>
+   <a href="/books/<%= book._id %>">Go back</a>
+       </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% include  ../partials/footer %>
