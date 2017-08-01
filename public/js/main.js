@@ -418,24 +418,24 @@ $.post('/books/'+url[2]+'/buy/otp',{mobile_no : mobile_no} ,function(){
 
 
 
-$('.submit-buy').on('click', function()
-{
-    
-    var url = window.location.pathname;
-     url = url.split('/');
-    var data = {
-        shipping : $('[name="buy[shipping]"]').val(),
-        pincode : $('[name="buy[pincode]"]').val(),
-        city : $('[name="buy[city]"]').val(),
-        phone_no: $('[name="buy[phone_no]"]').val(),
-        otp: $('[name="buy[otp]"]').val(),
-
-        
-    }
- $.post('/books/'+url[2]+'/buy/otp/verify',{data}, function(){});
-
-}                                     
-);
+//$('.submit-buy').on('click', function()
+//{
+//    
+////    var url = window.location.pathname;
+////     url = url.split('/');
+////    var data = {
+////        shipping : $('[name="buy[shipping]"]').val(),
+////        pincode : $('[name="buy[pincode]"]').val(),
+////        city : $('[name="buy[city]"]').val(),
+////        phone_no: $('[name="buy[phone_no]"]').val(),
+////        otp: $('[name="buy[otp]"]').val(),
+////
+////        
+////    }
+// $.post('/books/'+url[2]+'/buy/otp/verify',{data}, function(){});
+//
+//}                                     
+//);
 
 //-------------------------------------------------------------
 

@@ -8,36 +8,56 @@
  <form action="/books/<%= book._id %>/buy" method = "POST" class="buydetails-form">
                         
                          <div class="form-group">
-                              
-                                <input class="form-control" type = "text" name = "buy[name]" value = "<%= book.name %>"> 
+                              <label for="exampleInputEmail1">Book Name</label>
+                                <input class="form-control" type = "text" name = "buy[name]" value = "<%= book.name %>" readonly="readonly"> 
                         </div>
      
-     
+                          <div class="form-group">
+                              <label for="exampleInputEmail1">Condition</label>
+                                <input class="form-control" type = "text" name = "buy[condition]" value = "<%= book.condition %>" readonly="readonly"> 
+                        </div>
      
                         <div class="form-group">
-                              
+                              <label for="exampleInputEmail1">Shipping Address</label>
                                  <input class="form-control" type = "text" name = "buy[shipping]" value = "<%= data.shipping %>"> 
                         </div>
 
                         <div class="form-group">
-                   
+                                 <label for="exampleInputEmail1">Pincode</label>
                                  <input class="form-control" type = "text" name = "buy[pincode]" value = "<%= data.pincode %>"> 
                         </div>
 
                         <div class="form-group">
+                                <label for="exampleInputEmail1">City</label>
                                  <input class="form-control" type = "text" name = "buy[city]" value = "<%= data.city %>"> 
                         </div>
      
                         <div class="form-group">
-                                 <input class="form-control" type = "text" name = "buy[price]" value = "<%= book.price %>"> 
+                                <label for="exampleInputEmail1">Book Price</label>
+                                 <input class="form-control" type = "text" name = "buy[price]" value = "<%= book.price %>" readonly="readonly"> 
                         </div>
+                        
+<!-- readonly="readonly"
+                          <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                 <input class="form-control" type = "text" name = "buy[email]" value = "" readonly="readonly"> 
+                        </div>
+-->
      
                         <div class="form-group">
-                                 <input class="form-control" type = "text" name = "buy[phone_no]" value = "<%= data.phone_no %>"> 
+                                 <input class="form-control" type = "text" name = "buy[phone_no]" value = "<%= data.phone_no %>" readonly="readonly"> 
+                        </div>
+     
+                                             <div class="form-group">
+                          <label for="readonly="readonly"Select">Payment Mode</label>
+                          <select id="readonly="readonly"Select" class="form-control">
+                            <option>Cash On Delivery</option>
+                          </select>
                         </div>
        
      
                         <div class="form-group">
+                            
                                  <button class="btn btn-default btn-lg showcase-btn btn-block submit-buy"> Confirm! </button>
                         </div>
  

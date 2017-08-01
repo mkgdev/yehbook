@@ -1,0 +1,31 @@
+<% include  ../partials/header %> 
+ 
+<div class="container">
+
+<div style="margin : 0 auto;" class="jumbotron">
+    <h1>Thank You for shopping with us!</h1>
+    <h4>Your following item will be delivered :</h4>
+    <ol>
+    <li>Book Name : <%= data.name %></li>
+    <li>Condition : <%= data.condition %></li>
+    <li>Amount(COD) : ₹ <%= data.price %></li>
+    <li>Shipping Address : <%= data.shipping %></li>
+    <li>Pincode : <%= data.pincode %></li>
+    <li>City : <%= data.city %></li>
+    
+    <li>Registered Mobile no : <%= data.phone_no %></li>
+    
+    </ol>
+    
+<h2>To Cancel Your Order Email us at yehbookgroup@gmail.com with your registered Email ID with userID mentioned </h2>
+
+
+
+</div>
+
+</div>
+
+
+
+
+<% include  ../partials/footer %> 

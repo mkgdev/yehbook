@@ -3,6 +3,7 @@ var router     = express.Router();
 var client     = require('twilio')('ACa51208a494fa6858d2aa458e6393d2bd','3c79701ca13405a3cff0dadba4d4e48c');
 var Book       = require("../models/book");
 var RequestBook = require("../models/request");
+var buyData     = require('../models/buy');
 var middleware = require("../middleware");  // similar to var middleware = require("../middleware/index.js");  "it will take index.js file itself"
 
 var bookCondition ='All';
@@ -85,31 +86,31 @@ router.post('/condition', function(req, res)  //Getting the value of Cateogries 
 // SMS verfication
 //===================================================
  var  randomOTP;
-router.post('/:id/buy/otp', function(req, res)
+router.post('/:id/buy/otp',middleware.isLoggedIn, function(req, res)
 {
     console.log('yes');
 
     var mobile_no = req.body.mobile_no;
     console.log(req.body);
 
-client.messages.create({
-    
-     body: '11122',
-    to: mobile_no,  // Text this number
-    from: '+18564153674' // From a valid Twilio number
-}).then((message)=> {console.log(message.body)});
+//client.messages.create({
+//    
+//     body: '11122',
+//    to: mobile_no,  // Text this number
+//    from: '+18564153674' // From a valid Twilio number
+//}).then((message)=> {console.log(message.body)});
 
 }
           
 );
 
-router.post('/:id/buy/otp/verify', function(req, res)
+router.post('/:id/buy/otp/verify', middleware.isLoggedIn,function(req, res)
 {
 
-  var data = req.body.data;
-    console.log(req.body.data.otp);
+  var data = req.body.buy;
+    console.log(data);
     
-    if(req.body.data.otp ==='11122')
+    if(data.otp ==='11122')
         {
             console.log('otp');
             Book.findById(req.params.id, function(err, book)
@@ -142,7 +143,17 @@ router.post('/:id/buy/otp/verify', function(req, res)
 router.get('/:id/buy', middleware.isLoggedIn, function(req,res)
 {
 
-res.render('../views/books/buyform', {book: Book});
+        Book.findById(req.params.id, function(err, book)
+        {
+           if(err)
+               return console.log(err);
+            
+            res.render('../views/books/buyform', {book:book});
+        
+        
+        }
+                             
+        );
 
 
 }
@@ -153,7 +164,50 @@ res.render('../views/books/buyform', {book: Book});
 router.post('/:id/buy', middleware.isLoggedIn, function(req,res)
 {
 
-  console.log(req.body.buy);
+    var data = {
+        name: req.body.buy.name,
+        condition : req.body.buy.condition,
+         price : req.body.buy.price,
+        shipping: req.body.buy.shipping,
+        pincode : req.body.buy.pincode,
+        city : req.body.buy.city,
+        phone_no : req.body.buy.phone_no, 
+    }
+    
+    var user = {
+        id : req.user._id,
+        username : req.user.username
+    }
+    data.user = user;
+  
+  var book_id = {
+      
+      id : req.params.id
+  }
+    data.book_id = book_id;
+    
+    console.log('new data', data);
+    
+
+    
+      buyData.create(data, function(err, buydetails)
+    {
+               if(err)
+                   return console.log(err);
+          
+          console.log('buydetails', buydetails);
+          
+          res.render('../views/books/thankyou', {data: buydetails});
+                     
+                     
+                     
+   }
+                    
+                    
+                    
+    );
+    
+       
 
 
 
