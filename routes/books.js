@@ -93,12 +93,12 @@ router.post('/:id/buy/otp',middleware.isLoggedIn, function(req, res)
     var mobile_no = req.body.mobile_no;
     console.log(req.body);
 
-//client.messages.create({
-//    
-//     body: '11122',
-//    to: mobile_no,  // Text this number
-//    from: '+18564153674' // From a valid Twilio number
-//}).then((message)=> {console.log(message.body)});
+client.messages.create({
+    
+     body: '11122',
+    to: mobile_no,  // Text this number
+    from: '+18564153674' // From a valid Twilio number
+}).then((message)=> {console.log(message.body)});
 
 }
           
