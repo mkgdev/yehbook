@@ -1,5 +1,6 @@
 var express    = require("express");
 var router     = express.Router();
+var rn         = require('random-number');
 var client     = require('twilio')('ACa51208a494fa6858d2aa458e6393d2bd','3c79701ca13405a3cff0dadba4d4e48c');
 var Book       = require("../models/book");
 var RequestBook = require("../models/request");
@@ -15,7 +16,6 @@ var bookCondition ='All';
 
 router.get('/request/new', function(req,res)
 {
-
  res.render('../views/books/request');
 
 
@@ -88,14 +88,21 @@ router.post('/condition', function(req, res)  //Getting the value of Cateogries 
  var  randomOTP;
 router.post('/:id/buy/otp',middleware.isLoggedIn, function(req, res)
 {
-    console.log('yes');
+
 
     var mobile_no = req.body.mobile_no;
-    console.log(req.body);
+    
+    var options = {
+     
+     min : 11000,
+     max : 99999,
+     integer : true
+ }
+    randomOTP = rn(options);
 
 client.messages.create({
     
-     body: '11122',
+     body: 'Your yehbOok otp is '+randomOTP,
     to: mobile_no,  // Text this number
     from: '+18564153674' // From a valid Twilio number
 }).then((message)=> {console.log(message.body)});
@@ -110,7 +117,7 @@ router.post('/:id/buy/otp/verify', middleware.isLoggedIn,function(req, res)
   var data = req.body.buy;
     console.log(data);
     
-    if(data.otp ==='11122')
+    if(data.otp ===String(randomOTP))
         {
             console.log('otp');
             Book.findById(req.params.id, function(err, book)
