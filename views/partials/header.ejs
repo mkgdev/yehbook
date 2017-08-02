@@ -42,7 +42,9 @@
                <ul class="nav navbar-nav navbar-right">
             <li><a href="/#showcase">Home</a></li>
             <li><a href="/#info1">About</a></li>
-            <li><a href="/#contact">Contact</a></li>
+            <li><a href="/books">Buy Books</a></li>
+            <li><a href="/books">Sell Books</a></li>
+            
             <%     if(!currentUser)  {  %>
 
                  <!--  <li> <a href="/login"> Login   </a> </li> -->
@@ -56,6 +58,8 @@
                   <li><a href = "#"><%= currentUser.username||currentUser.facebook.name||currentUser.google.name %></a></li>
                   <li><a href="/logout">LogOut</a></li>
            <%     }       %>
+                   
+            <li><a href="/#contact">Contact</a></li>
                </ul>
 
          </div>
