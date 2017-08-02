@@ -62,6 +62,16 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //LocalStrategy
+
+//    passport.use(new LocalStrategy({   // 'login-signup' is optional here   
+//    usernameField : 'username',
+//    passwordField : 'password',        
+//    passReqToCallback : true },function(req, username, password, done) {
+//   var email = req.body.email;
+//  var username = req.body.username;
+////  var gender = req.body.gender;
+//        
+//        }));
 passport.use(new LocalStrategy(User.authenticate()));
 
 //==============================================

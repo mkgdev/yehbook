@@ -402,7 +402,7 @@ $.post('/books/'+url[2]+'/buy/otp',{mobile_no : mobile_no} ,function(){
           $('.verify-otp').text('Resend OTP');
   
 
-    $('.submit-buy').before('<div class="form-group"><input class="form-control" type = "text" name = "buy[otp]" placeholder = "OTP"></div>');  
+    $('.submit-buy').before('<div class="form-group"><input class="form-control" type = "text" name = "buy[otp]" placeholder = "OTP" required></div>');  
     }
    
      

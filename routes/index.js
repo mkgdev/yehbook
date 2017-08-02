@@ -28,20 +28,27 @@ router.get("/register", function(req, res){
 });
 
 // handle signup logic
-
+var email;
+var gender;
 router.post("/register", function(req, res){
+         
        
        var newUser = new User({username: req.body.username});
+      email = req.body.email;
+      gender = req.body.email;
+
        User.register(newUser, req.body.password, function(err, user){
             if(err) {
-              console.log(err);              
+              console.log(err); 
+              
               req.flash("error", err.message);
               return res.render("register");
-            } 
-        
+            }
+
         passport.authenticate("local")(req, res, function(){
         
           req.flash("success", "welcome to yehBOok " + user.username);
+      
           res.redirect("/");
         });
 
