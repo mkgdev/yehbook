@@ -39,8 +39,9 @@ p{
 }
 
 .row-show{
-    height: 60%;
+    height: auto;
 }
+
 
 .col-showimg{
     height: 100%;
